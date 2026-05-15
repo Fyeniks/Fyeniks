@@ -1,0 +1,227 @@
+/* Reset marginesów */
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #0e0e0e;
+}
+body {
+    zoom: 0.7 /* zmniejsza wszystko o 80% */
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+/* Fioletowa sekcja */
+#Kolor {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 60%, 0% 90%);
+    background-color: #671dfa;
+    height: 600px;
+    overflow: hidden;
+}
+
+/* Sekcje pod fioletową – wyśrodkowanie */
+section:not(#Kolor) {
+    display: flex;
+    justify-content: center; /* poziome wyśrodkowanie boxa */
+    padding: 60px 0;
+}
+
+/* Bazowy styl wszystkich boxów */
+section .box {
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    padding: 20px;
+    box-sizing: border-box;
+    color: white;
+    text-align: center;
+}
+
+/* Indywidualne wymiary boxów */
+.start-box {
+    width: 50%;    /* szerokość Start */
+    min-height: 200px; /* wysokość Start */
+    max-height: 460px;
+    margin-top: -400px; /* przesunięcie w górę o 200px */
+    z-index: 1; /* żeby był nad fioletową sekcją */
+    
+}
+
+.contact-box {
+    width: 50%;    /* szerokość Start */
+    min-height: 200px; /* wysokość Start */
+    max-height: 460px;
+    margin-top: 0px;
+    margin-bottom: 50px;
+    
+}
+#huge {
+    font-weight: bold;
+}
+.contact-box h1 {
+    font-size: 50px;
+}
+
+.contact-box p {
+    font-size: 25px;
+    line-height: 40px;
+    margin-top: 0px;
+}
+.text-box {
+    width: 90%;    /* szerokość WorkWith */
+    height: 140px; /* wysokość WorkWith */
+}
+.text-box h1 {
+    font-size: 50px;
+    position: relative;   /* pozwala przesuwać tekst w boxie */
+    top: -15px; 
+}
+
+.work-box {
+    width: 60%;    /* szerokość WorkWith */
+    min-height: 400px; /* wysokość WorkWith */
+}
+
+.shorts-box {
+    width: 50%;    /* szerokość Shorts */
+    min-height: 250px; /* wysokość Shorts */
+}
+/* Wyśrodkowanie w wrapperze */
+.avatar-wrapper {
+    position: relative;
+    margin-top: 20px;
+    text-align: center; /* centrowanie inline-block obrazka */
+}
+.avatar {
+    width: 250px; /* rozmiar awatara */
+    height: 250px;
+    border-radius: 50%; /* pełne zaokrąglenie */
+    border: 4px solid #0e0e0e; /* opcjonalna ramka pasująca do tła */
+    object-fit: cover; /* żeby obrazek wypełniał koło */
+    position: relative;
+    top: -150px; /* wychodzi 60px ponad box */
+}
+.start-box h1,
+.btn-contact,
+.start-box p {
+    position: relative;   /* pozwala przesuwać tekst w boxie */
+    top: -150px;           /* przesunięcie tekstu w górę o 50px */
+}
+.start-box h1 {
+    font-size: 50px;
+}
+.start-box p {
+    font-size: 25px;
+}
+.btn-contact {
+    display: inline-block;
+    margin-top: 5px;        /* odstęp od tekstu */
+    padding: 12px 30px;      /* wielkość przycisku */
+    background-color: #671dfa; /* kolor fioletowy pasujący do sekcji */
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 6px;
+    text-decoration: none;   /* usuwa podkreślenie linku */
+    transition: background 0.3s;
+}
+
+/* Efekt po najechaniu */
+.btn-contact:hover {
+    background-color: #4a00b8; /* ciemniejszy fiolet po hover */
+}
+.colorfade {
+  animation: colorfade 3s infinite;
+}
+
+@keyframes colorfade {
+  0% { color: #d51dfa; }
+  50% { color: #ffffff; }
+  100% { color:#d51dfa; }
+}
+
+#Shorts {
+  padding: 60px 0;
+  background-color: #0e0e0e;
+}
+
+.shorts-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 3 w rzędzie */
+  gap: 60px; /* odstęp między shortami */
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.portfolio-item {
+  width: 90%; /* wypełnia kolumnę */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.portfolio-item a {
+  display: block;
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 600px;
+  aspect-ratio: 9 / 16; /* podłużne proporcje */
+  object-fit: cover;     /* obrazek wypełnia cały box */
+  display: block;
+  border-radius: 6px;
+}
+
+.long-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 2fr); /* 3 w rzędzie */
+  gap: 300px; /* odstęp między shortami */
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.portfolio-itemL {
+  width: 80%; /* wypełnia kolumnę */
+  border-radius: 8px;
+  overflow: hidden;
+  scale: 1.7;
+}
+
+.portfolio-itemL img {
+  width: 100%;      /* wypełnia całą kolumnę */
+  height: auto;       /* usuwa sztywne 400px */
+  aspect-ratio: 16 / 9; /* podłużne proporcje */
+  object-fit: cover;  /* wypełnia cały box bez pasków */
+  display: block;
+  border-radius: 6px;
+}
+.contact-link {
+  color: #671dfa;          /* fioletowy pasujący do strony */
+  text-decoration: none;    /* usuwa podkreślenie */
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.contact-link:hover {
+  color: #ffffff;           /* zmienia kolor na biały przy hover */
+  text-decoration: underline; /* lekko podkreśla przy najechaniu */
+  cursor: pointer;
+}
+
+footer {
+  background-color: #0e0e0e; /* ciemne tło */
+  color: #999;               /* szary tekst */
+  text-align: center;        /* wyśrodkowanie */
+  padding: 10px 0;           /* odstęp od góry i dołu */
+  font-size: 16px;           /* mniejsza czcionka */
+  border-top: 1px solid #333; /* subtelna linia u góry */
+  position: fixed;       /* przyklejony do okna */
+  bottom: 0;             /* na dole */
+   left: 0;
+  width: 100%; 
+}
+
+footer .footer-name {
+  color: #671dfa;           /* fioletowy akcent dla nazwy */
+  font-weight: bold;
+}
+
