@@ -894,6 +894,132 @@ span {
     font-size: 1.35rem;
 }
 
+
+
+/* TOS PAGE */
+
+.tos-body {
+    background:
+        radial-gradient(circle at 18% 18%, rgba(103, 29, 250, 0.18), transparent 34rem),
+        radial-gradient(circle at 82% 62%, rgba(103, 29, 250, 0.10), transparent 34rem),
+        linear-gradient(rgba(8, 8, 8, 0.74), rgba(8, 8, 8, 0.74)),
+        var(--noise-bg),
+        #050505;
+    background-size: auto, auto, auto, 420px 260px, auto;
+}
+
+.tos-page {
+    min-height: 100vh;
+    padding: 14rem 9% 6rem;
+    background:
+        radial-gradient(circle at 18% 18%, rgba(47, 169, 255, 0.10), transparent 34rem),
+        radial-gradient(circle at 82% 62%, rgba(103, 29, 250, 0.14), transparent 34rem),
+        linear-gradient(rgba(5, 5, 5, 0.74), rgba(5, 5, 5, 0.74)),
+        var(--noise-bg),
+        #050505;
+    background-size: auto, auto, auto, 420px 260px, auto;
+}
+
+.tos-hero {
+    max-width: 86rem;
+    margin: 0 auto 5rem;
+    text-align: center;
+}
+
+.tos-hero h1 {
+    font-size: clamp(4rem, 7vw, 7rem);
+    line-height: 1.05;
+    letter-spacing: -0.22rem;
+    margin-bottom: 1.8rem;
+}
+
+.tos-hero p:not(.eyebrow) {
+    max-width: 72rem;
+    margin: 0 auto;
+    color: #e0e0e0;
+    font-size: 1.75rem;
+    line-height: 1.8;
+}
+
+.tos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.4rem;
+    max-width: 112rem;
+    margin: 0 auto;
+}
+
+.tos-card {
+    position: relative;
+    min-height: 20rem;
+    padding: 3rem;
+    border-radius: 2rem;
+    overflow: hidden;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(0, 0, 0, 0.20)),
+        var(--noise-bg),
+        rgba(14, 14, 14, 0.88);
+    background-size: auto, 420px 260px, auto;
+    border: 1px solid rgba(13, 105, 190, 0.56);
+    box-shadow: 0 1.6rem 4rem rgba(0, 0, 0, 0.32);
+    transition: 0.3s ease;
+}
+
+.tos-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 100% 0%, rgba(47, 169, 255, 0.13), transparent 18rem),
+        radial-gradient(circle at 0% 100%, rgba(103, 29, 250, 0.12), transparent 18rem);
+    pointer-events: none;
+}
+
+.tos-card:hover {
+    transform: translateY(-0.6rem);
+    border-color: rgba(47, 169, 255, 0.78);
+    box-shadow:
+        0 0 28px rgba(47, 169, 255, 0.18),
+        0 0 24px rgba(103, 29, 250, 0.18);
+}
+
+.tos-number {
+    position: relative;
+    display: inline-block;
+    color: var(--main-color-2);
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: 0.16rem;
+    margin-bottom: 1.2rem;
+}
+
+.tos-card h2 {
+    position: relative;
+    font-size: 2.3rem;
+    margin-bottom: 1rem;
+}
+
+.tos-card p {
+    position: relative;
+    color: #d8d8d8;
+    font-size: 1.5rem;
+    line-height: 1.75;
+}
+
+.tos-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1.4rem;
+    flex-wrap: wrap;
+    margin-top: 4rem;
+}
+
+@media (max-width: 900px) {
+    .tos-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* LINKS PAGE */
 
 .links-body {
