@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fyeniks — TOS</title>
+    <meta name="description" content="Fyeniks terms of service for video editing commissions." />
+    <!-- FAVICON: if GitHub/Browser keeps old icon, change v=4 to v=5 to force refresh -->
+    <link rel="shortcut icon" href="./assets/favicon.ico?v=4" sizes="any" />
+    <link rel="icon" href="./assets/favicon.ico?v=4" sizes="any" />
+    <link rel="icon" type="image/png" href="./assets/favicon.png?v=4" />
+    <link rel="apple-touch-icon" href="./assets/favicon.png?v=4" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body class="tos-body">
+    <header class="header">
+        <div class="brand">
+            <a href="links.html" class="logo" title="Open links"><span>Fyeniks</span></a>
+            <!-- CHANGE COMMISSION STATUS HERE: change only the word OPEN / SELECTIVE / CLOSED below -->
+            <span class="commission-status">Commissions <span class="commission-state">OPEN</span></span>
+        </div>
+
+        <button class="menu-btn" aria-label="Open menu" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <nav class="navbar">
+            <a href="index.html#home" class="nav-link">Home</a>
+            <a href="index.html#experience" class="nav-link">Experience</a>
+            <a href="tos.html" class="nav-link active">TOS</a>
+            <a href="index.html#contact" class="nav-link">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="tos-page" id="tos">
+            <div class="tos-hero reveal">
+                <p class="eyebrow">Commission rules</p>
+                <h1>Terms of <span>Service</span></h1>
+                <p>
+                    These terms explain how commissions work, what I need from you, and what you can expect during the editing process.
+                </p>
+            </div>
+
+            <div class="tos-grid">
+                <article class="tos-card reveal">
+                    <span class="tos-number">01</span>
+                    <h2>General</h2>
+                    <p>By ordering an edit, you agree to these terms. I can refuse projects that do not fit my style, schedule, or boundaries.</p>
+                </article>
+
+                <article class="tos-card reveal">
+                    <span class="tos-number">02</span>
+                    <h2>Payment</h2>
+                    <p>Prices depend on the client, edit type, footage length, deadlines, and the amount of work required. Payment details are agreed before work starts.</p>
+                </article>
+
+                <article class="tos-card reveal">
+                    <span class="tos-number">03</span>
+                    <h2>Materials</h2>
+                    <p>Please send footage, links, timestamps, references, and any important notes. I can also download Twitch VODs or clips myself if you provide the links.</p>
+                </article>
+
+                <article class="tos-card reveal">
+                    <span class="tos-number">04</span>
+                    <h2>Revisions</h2>
+                    <p>Small revisions are included when they match the original request. Major changes, new concepts, or extra work may cost more.</p>
+                </article>
+
+                <article class="tos-card reveal">
+                    <span class="tos-number">05</span>
+                    <h2>Delivery</h2>
+                    <p>Delivery time depends on the project size and current queue. Final files are delivered in a format suitable for YouTube, TikTok, Instagram, or your requested platform.</p>
+                </article>
+
+                <article class="tos-card reveal">
+                    <span class="tos-number">06</span>
+                    <h2>Usage</h2>
+                    <p>You can post the finished edit on your channels. I may showcase the work in my portfolio unless we agree otherwise before the project starts.</p>
+                </article>
+
+                <article class="tos-card reveal">
+                    <span class="tos-number">07</span>
+                    <h2>Cancellations</h2>
+                    <p>If a project is cancelled after work has started, the finished part or time already spent may still be charged.</p>
+                </article>
+
+                <article class="tos-card reveal">
+                    <span class="tos-number">08</span>
+                    <h2>Contact</h2>
+                    <p>Have questions before ordering? Message me first and I will confirm the scope, price, and timeline before starting.</p>
+                </article>
+            </div>
+
+            <div class="tos-actions reveal">
+                <a href="index.html#contact" class="btn">Contact me</a>
+                <a href="index.html#faq" class="btn btn-secondary">FAQ</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 Fyeniks.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
