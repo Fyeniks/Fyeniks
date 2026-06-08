@@ -125,16 +125,29 @@ document.querySelectorAll('.work-thumb.playable-video[data-youtube-id]').forEach
         iframe.className = 'youtube-embed';
         iframe.title = title;
 
-        // YouTube can show Error 153 when the embed does not receive a proper referrer/origin.
-        // This matches YouTube's current recommended iframe setup.
-        const origin = window.location.origin && window.location.origin !== 'null'
-            ? `&origin=${encodeURIComponent(window.location.origin)}`
-            : '';
+        // YouTube Error 153 happens when the player does not receive an HTTP Referer.
+        // The player works correctly when the site is opened through Live Server / hosting.
+        // When opened as file://, browsers cannot send a normal HTTP Referer to YouTube,
+        // so we show a clean local-preview notice instead of the YouTube error screen.
+        const embedSrc = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&playsinline=1`;
 
-        iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&playsinline=1${origin}`;
+        if (window.location.protocol === 'file:') {
+            const localNotice = document.createElement('div');
+            localNotice.className = 'youtube-local-notice';
+            localNotice.innerHTML = `
+                <i class="fa-brands fa-youtube"></i>
+                <strong>Local file preview</strong>
+                <p>YouTube blocks on-page playback when the site is opened as file://. It will play on GitHub Pages or localhost.</p>
+                <a href="https://youtu.be/${videoId}" target="_blank" rel="noopener">Open on YouTube</a>
+            `;
+            thumb.appendChild(localNotice);
+            return;
+        }
+
+        iframe.src = embedSrc;
         iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-        iframe.referrerPolicy = 'strict-origin-when-cross-origin';
-        iframe.allowFullscreen = true;
+        iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+        iframe.setAttribute('allowfullscreen', '');
         iframe.setAttribute('frameborder', '0');
 
         thumb.appendChild(iframe);
@@ -186,3 +199,48 @@ function updateActiveNav() {
 window.addEventListener('scroll', updateActiveNav, { passive: true });
 window.addEventListener('resize', updateActiveNav);
 updateActiveNav();
+
+// Cursor trail particles
+// Easy settings: lower MIN_TIME_BETWEEN_PARTICLES for more dots, raise it for fewer dots.
+const cursorTrailSettings = {
+    minTimeBetweenParticles: 18,
+    colors: [
+        { dot: '#ffffff', glow: 'rgba(255, 255, 255, 0.75)' },
+        { dot: '#dff6ff', glow: 'rgba(120, 220, 255, 0.85)' },
+        { dot: '#5fd8ff', glow: 'rgba(95, 216, 255, 0.95)' }
+    ]
+};
+
+let lastCursorParticleTime = 0;
+
+function spawnCursorParticle(event) {
+    const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (isTouchDevice || reduceMotion) return;
+
+    const now = performance.now();
+    if (now - lastCursorParticleTime < cursorTrailSettings.minTimeBetweenParticles) return;
+    lastCursorParticleTime = now;
+
+    const particle = document.createElement('span');
+    particle.className = 'cursor-particle';
+
+    const size = 4 + Math.random() * 4;
+    const driftX = (Math.random() - 0.5) * 24;
+    const driftY = (Math.random() - 0.5) * 24;
+    const color = cursorTrailSettings.colors[Math.floor(Math.random() * cursorTrailSettings.colors.length)];
+
+    particle.style.left = `${event.clientX}px`;
+    particle.style.top = `${event.clientY}px`;
+    particle.style.setProperty('--particle-size', `${size}px`);
+    particle.style.setProperty('--particle-drift-x', `${driftX}px`);
+    particle.style.setProperty('--particle-drift-y', `${driftY}px`);
+    particle.style.setProperty('--particle-color', color.dot);
+    particle.style.setProperty('--particle-glow', color.glow);
+
+    document.body.appendChild(particle);
+    particle.addEventListener('animationend', () => particle.remove(), { once: true });
+}
+
+window.addEventListener('pointermove', spawnCursorParticle, { passive: true });
