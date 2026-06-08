@@ -1345,3 +1345,81 @@ span {
     background: #000;
 }
 
+
+.youtube-local-notice {
+    position: absolute;
+    inset: 0;
+    z-index: 12;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0.8rem;
+    padding: 2rem;
+    background: radial-gradient(circle at center, rgba(103, 29, 250, 0.18), rgba(0, 0, 0, 0.94) 62%);
+    color: var(--text-color);
+}
+
+.youtube-local-notice i {
+    font-size: 3.2rem;
+    color: var(--main-color);
+    filter: drop-shadow(0 0 14px rgba(103, 29, 250, 0.8));
+}
+
+.youtube-local-notice strong {
+    font-size: 1.7rem;
+    color: var(--text-color);
+}
+
+.youtube-local-notice p {
+    max-width: 32rem;
+    color: #cfcfcf;
+    font-size: 1.25rem;
+    line-height: 1.55;
+}
+
+.youtube-local-notice a {
+    color: var(--main-color);
+    font-weight: 800;
+    font-size: 1.3rem;
+    letter-spacing: 0.04em;
+}
+
+/* Cursor trail: small white/blue particles following the cursor */
+.cursor-particle {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: var(--particle-size, 0.55rem);
+    height: var(--particle-size, 0.55rem);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.95;
+    transform: translate(-50%, -50%) scale(1);
+    background: var(--particle-color, #ffffff);
+    box-shadow:
+        0 0 0.8rem var(--particle-glow, rgba(69, 190, 255, 0.8)),
+        0 0 1.8rem rgba(69, 190, 255, 0.35);
+    animation: cursorParticleFade 0.72s ease-out forwards;
+    mix-blend-mode: screen;
+}
+
+@keyframes cursorParticleFade {
+    0% {
+        opacity: 0.95;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(calc(-50% + var(--particle-drift-x, 0px)), calc(-50% + var(--particle-drift-y, 0px))) scale(0.15);
+    }
+}
+
+@media (pointer: coarse), (prefers-reduced-motion: reduce) {
+    .cursor-particle {
+        display: none;
+    }
+}
