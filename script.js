@@ -177,7 +177,6 @@ const linkedSections = Array.from(navLinks)
 
 function updateActiveNav() {
     if (!linkedSections.length) {
-        navLinks.forEach((link) => link.classList.remove('active'));
         return;
     }
 
