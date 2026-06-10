@@ -18,7 +18,6 @@
     <header class="header">
         <div class="brand">
             <a href="links.html" class="logo" title="Open links"><span>Fyeniks</span></a>
-            <!-- CHANGE COMMISSION STATUS HERE: change only the word OPEN / SELECTIVE / CLOSED below -->
             <span class="commission-status">Commissions <span class="commission-state">OPEN</span></span>
         </div>
 
@@ -121,7 +120,6 @@
             </div>
 
             <div class="portfolio-grid">
-                <!-- Change @Fyeniks inside .work-thumb span to the creator/client handle for each edit, e.g. @ClientName. -->
                 <article class="work-card reveal" data-category="video" data-featured="true">
                     <div class="work-thumb has-thumbnail playable-video" data-youtube-id="FofwTRuW4FU" data-youtube-title="Test Video Edit" role="button" tabindex="0" aria-label="Play Test Video Edit on this page">
                         <img class="work-thumb-img" src="https://img.youtube.com/vi/FofwTRuW4FU/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/FofwTRuW4FU/hqdefault.jpg';" alt="YouTube video thumbnail" loading="lazy">
@@ -257,6 +255,7 @@
                 </article>
             </div>
         </section>
+
         <section class="faq" id="faq">
             <h2 class="section-title reveal">FAQ</h2>
             <p class="section-subtitle reveal">Quick answers before ordering an edit.</p>
@@ -318,6 +317,16 @@
     <footer class="footer">
         <p>© 2026 Fyeniks.</p>
     </footer>
+
+    <script>
+        if (location.pathname.endsWith('/index.html')) {
+            history.replaceState(
+                null,
+                '',
+                location.pathname.replace(/index\.html$/, '') + location.hash
+            );
+        }
+    </script>
 
     <script src="script.js"></script>
 </body>
