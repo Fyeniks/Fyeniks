@@ -30,7 +30,7 @@ if (menuBtn && navbar) {
 
 // Typewriter text on the homepage
 const typedText = document.querySelector('#typed-text');
-const words = ['Video Editor', 'Motion Designer', 'Channel Manager', 'Thumbnail Designer', 'Content Creator'];
+const words = ['Video Editor', 'Channel Manager'];
 let wordIndex = 0;
 let charIndex = 0;
 let deleting = false;
