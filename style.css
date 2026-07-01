@@ -639,6 +639,8 @@ span {
         var(--card-color);
     background-size: auto, 420px 260px, auto;
     transition: 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .work-card:hover {
@@ -707,6 +709,9 @@ span {
 
 .work-info {
     padding: 2.3rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .work-type {
@@ -737,6 +742,8 @@ span {
     font-size: 1.4rem;
     color: var(--main-color);
     font-weight: 800;
+    margin-top: auto; 
+    align-self: flex-start;
 }
 
 .work-link:hover {
