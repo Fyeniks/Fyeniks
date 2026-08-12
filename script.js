@@ -1,4 +1,3 @@
-
 // Commission status color
 document.querySelectorAll('.commission-state').forEach((state) => {
     const value = state.textContent.trim().toLowerCase();
