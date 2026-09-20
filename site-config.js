@@ -10,17 +10,17 @@ window.SITE = {
     name: "Fyeniks",
     role: "Video Editor & Web Developer",
     profileKicker: "Hi, it's",
-    roleLine: "Video Editor · Illustrator\nWeb Developer",
+    roleLine: "Video Editor · Web Developer",
     eyebrow: "YOUR BEST CHOICE",
     aboutIndex: "01 / FYENIKS",
     aboutTitle: "Let's expand your",
     aboutAccent: "digital footprint.",
     tagline: "I help VTubers and streamers turn raw stream footage and voiceovers into dynamic shorts and polished highlights that grab attention on YouTube, TikTok, and Instagram.",
-    about: "Hiiii! I’m Fyeniks! I’m a freelance video editor focused on VTubers, streamers, and online creators. I’m also a web developer and illustrator with a passion for gaming, programming and music.",
+    about: "Hiiii! I’m Fyeniks! I’m a freelance video editor focused on VTubers, streamers and online creators. I’m also a web developer, an aspiring illustrator and motion designer with a passion for gaming, programming and music.",
     aboutLines: [
-      "Hiiii! I’m Fyeniks! I’m a freelance video editor focused on VTubers, streamers,",
-      "and online creators. I’m also a web developer and illustrator with a passion for gaming, programming",
-      "and music."
+      "Hiiii! I’m Fyeniks! I’m a freelance video editor focused on VTubers, streamers and",
+      "online creators. I’m also a web developer, an aspiring illustrator and motion designer with a",
+      "passion for gaming, programming and music."
     ]
   },
 
@@ -51,11 +51,11 @@ window.SITE = {
     youtubeClips: "https://youtube.com/@fyeniksclips",
     x: "https://x.com/Fyeniks",
     discord: "https://discord.com/users/Fyeniks",
-    tiktok: "https://www.tiktok.com/@fyeniks",
-    instagram: "https://www.instagram.com/fyeniks/",
+    tiktok: "https://www.tiktok.com/@fyeniks_",
+    instagram: "https://www.instagram.com/fyeniks_/",
     ytjobs: "https://ytjobs.co/talent/vitrine/505761",
-    // Replace this with your exact Ko-fi shop/product URL when it is ready.
-    kofi: "https://ko-fi.com/"
+    // Replace this with your exact Google Drive file/folder URL when it is ready.
+    googleDrive: "https://drive.google.com/"
   },
 
   socials: [
@@ -138,38 +138,44 @@ window.SITE = {
         intro: "Fast-paced creator edits made for Shorts, TikTok and Reels.",
         mediaStyle: "wide",
         showYtJobs: true
-      },
-      {
+      }
+
+      /* =============================================================
+         DISABLED PORTFOLIO SECTIONS
+         -------------------------------------------------------------
+         These sections are intentionally commented out until I have
+         my own work to show in them. To restore one, follow
+         PORTFOLIO-RESTORE-GUIDE.txt.
+         =============================================================
+
+      ,{
         id: "long-form",
         label: "Long-form",
         title: "Long-form Videos",
         kicker: "LONG-FORM",
         intro: "Longer creator-focused edits, highlights and YouTube videos.",
         mediaStyle: "wide",
-        showYtJobs: true,
-        demo: true
-      },
-      {
+        showYtJobs: true
+      }
+      ,{
         id: "thumbnails",
         label: "Thumbnails",
         title: "Thumbnails",
         kicker: "THUMBNAIL DESIGN",
         intro: "Thumbnail design showcase — image-first presentation for visual work.",
         mediaStyle: "thumbnail",
-        showYtJobs: true,
-        demo: true
-      },
-      {
+        showYtJobs: true
+      }
+      ,{
         id: "web-development",
         label: "Web Dev",
         title: "Web Development",
         kicker: "WEB DEVELOPMENT",
         intro: "Responsive creator-focused websites, portfolio hubs and custom landing pages.",
         mediaStyle: "website",
-        showYtJobs: false,
-        demo: true
-      },
-      {
+        showYtJobs: false
+      }
+      ,{
         id: "other-projects",
         label: "Other Projects",
         title: "My Other Projects",
@@ -179,6 +185,7 @@ window.SITE = {
         showYtJobs: false,
         emptyText: "More side projects will appear here as I make them."
       }
+      */
     ],
 
     /*
@@ -186,24 +193,11 @@ window.SITE = {
       commissioned: false -> FAN EDIT
       projectType: "fan"     -> FAN EDIT
       projectType: "concept" -> CONCEPT EDIT
-      projectType: "demo"    -> DEMO
-      projectType: "reference" -> REFERENCE (external inspiration / placeholder)
-      demo: true           -> DEMO badge (for temporary layout examples)
-
-      Optional portfolio metadata:
-      work: ["MOTION DESIGN", "INSTRUMENTAL", "MIX", "VOCAL COACH", "ANIMATION", "ILLUSTRATION", "CUSTOM CURSOR"]
-      views: "125K"        -> manual public view count shown on the card
-      likes: "8.4K"        -> manual public like count shown on the card
-
-      creatorTwitch is optional. If omitted, the site automatically uses:
-      https://twitch.tv/<creator without @>
-
-      mediaType:
-      - "youtube" -> uses youtubeId + automatic YouTube thumbnail
-      - "image"   -> uses image + optional url
-      This makes future sections such as websites / motion design easy to add.
+      mediaType: "youtube"   -> use youtubeId
+      mediaType: "image"     -> use image + optional url
     */
     items: [
+      /* Active portfolio: Shorts only. */
       { section: "shorts", creator: "@Ironmouse", title: "I Know I Have BAD LUCK 🍀", youtubeId: "DFHuRlXLaPs", mediaType: "youtube", youtubeFormat: "short", commissioned: false },
       { section: "shorts", creator: "@CottontailVA", title: "Cotton is DESPERATE for LOVE 💜", youtubeId: "lB8tuS5cFaQ", mediaType: "youtube", youtubeFormat: "short", commissioned: false },
       { section: "shorts", creator: "@MegalodonVT", title: "Are VTubers STILL Doing THIS in 2026?! 🥰", youtubeId: "1Lwi1OYc9zw", mediaType: "youtube", youtubeFormat: "short", commissioned: false },
@@ -212,107 +206,57 @@ window.SITE = {
       { section: "shorts", creator: "@Shylili", title: "Why Is Everyone CHEATING Now?! 💔", youtubeId: "dHzPiziFjLo", mediaType: "youtube", youtubeFormat: "short", commissioned: false },
       { section: "shorts", creator: "@Chibidoki", title: "WORST Gnomes Ever... 💀", youtubeId: "gJzHNLKnA34", mediaType: "youtube", youtubeFormat: "short", commissioned: false },
       { section: "shorts", creator: "@Squchan", title: "Squ Has the WORST Food Taste Ever 🍟", youtubeId: "PC4Z4J9eq2A", mediaType: "youtube", youtubeFormat: "short", commissioned: false },
-      { section: "shorts", creator: "@Deme", title: "Deme is the worst driver 💥", youtubeId: "jsgozkXJRDg", mediaType: "youtube", youtubeFormat: "short", commissioned: false },
+      { section: "shorts", creator: "@Deme", title: "Deme is the worst driver 💥", youtubeId: "jsgozkXJRDg", mediaType: "youtube", youtubeFormat: "short", commissioned: false }
 
       /* =============================================================
-         DEMO START — LONG-FORM
-         Delete everything from DEMO START to DEMO END when replacing
-         these temporary cards with your real long-form projects.
-         ============================================================= */
-      { section: "long-form", creator: "@ironmouse", title: "Ironmouse Reacts to Videos That You Can't Stop Consuming!", youtubeId: "TRqTfvhrGfU", mediaType: "youtube", youtubeFormat: "video", demo: true, commissioned: true },
-      { section: "long-form", creator: "@shylily", title: "The Origin of Shylily | Lore Video", youtubeId: "pK-f1YNy_Ck", mediaType: "youtube", youtubeFormat: "video", demo: true, commissioned: false },
-      { section: "long-form", creator: "@ironmouse", title: "Ironmouse Reacts to the Sussiest Things People Have Said", youtubeId: "8zlUi4Y_vcQ", mediaType: "youtube", youtubeFormat: "video", demo: true, commissioned: true },
-      { section: "long-form", creator: "@ironmouse", title: "Long-form Demo 04", youtubeId: "TRqTfvhrGfU", mediaType: "youtube", youtubeFormat: "video", demo: true, commissioned: false },
-      { section: "long-form", creator: "@shylily", title: "Long-form Demo 05", youtubeId: "pK-f1YNy_Ck", mediaType: "youtube", youtubeFormat: "video", demo: true, commissioned: true },
-      { section: "long-form", creator: "@ironmouse", title: "Long-form Demo 06", youtubeId: "8zlUi4Y_vcQ", mediaType: "youtube", youtubeFormat: "video", demo: true, commissioned: false },
-      { section: "long-form", creator: "@ironmouse", title: "Long-form Demo 07", youtubeId: "TRqTfvhrGfU", mediaType: "youtube", youtubeFormat: "video", demo: true, commissioned: true },
-      { section: "long-form", creator: "@shylily", title: "Long-form Demo 08", youtubeId: "pK-f1YNy_Ck", mediaType: "youtube", youtubeFormat: "video", demo: true, commissioned: false },
-      { section: "long-form", creator: "@ironmouse", title: "Long-form Demo 09", youtubeId: "8zlUi4Y_vcQ", mediaType: "youtube", youtubeFormat: "video", demo: true, commissioned: true },
-      /* ===================== DEMO END — LONG-FORM ===================== */
+         DISABLED PROJECT TEMPLATES
+         -------------------------------------------------------------
+         The old non-Shorts examples were not my work, so their creator
+         names, titles, links, IDs and external images were removed.
+         Keep these commented until replacing them with my own projects.
 
-      /* =============================================================
-         DEMO START — THUMBNAILS
-         Delete everything from DEMO START to DEMO END when replacing
-         these temporary thumbnail cards with your real work.
-         ============================================================= */
-      { section: "thumbnails", creator: "@ironmouse", title: "Thumbnail Demo 01", youtubeId: "TRqTfvhrGfU", mediaType: "youtube-thumbnail", youtubeFormat: "video", demo: true },
-      { section: "thumbnails", creator: "@shylily", title: "Thumbnail Demo 02", youtubeId: "pK-f1YNy_Ck", mediaType: "youtube-thumbnail", youtubeFormat: "video", demo: true },
-      { section: "thumbnails", creator: "@ironmouse", title: "Thumbnail Demo 03", youtubeId: "8zlUi4Y_vcQ", mediaType: "youtube-thumbnail", youtubeFormat: "video", demo: true },
-      { section: "thumbnails", creator: "@ironmouse", title: "Thumbnail Demo 04", youtubeId: "TRqTfvhrGfU", mediaType: "youtube-thumbnail", youtubeFormat: "video", demo: true },
-      { section: "thumbnails", creator: "@shylily", title: "Thumbnail Demo 05", youtubeId: "pK-f1YNy_Ck", mediaType: "youtube-thumbnail", youtubeFormat: "video", demo: true },
-      { section: "thumbnails", creator: "@ironmouse", title: "Thumbnail Demo 06", youtubeId: "8zlUi4Y_vcQ", mediaType: "youtube-thumbnail", youtubeFormat: "video", demo: true },
-      /* ===================== DEMO END — THUMBNAILS ===================== */
-
-      /* =============================================================
-         DEMO START — WEB DEVELOPMENT
-         Replace or delete these three demo website projects when you
-         have your real web-development portfolio ready.
-         ============================================================= */
-      { section: "web-development", creator: "Fyeniks", creatorUrl: "https://fyeniks.xyz/", title: "Fyeniks Portfolio Hub", mediaType: "image", image: "assets/web-fyeniks-demo.svg", url: "https://fyeniks.xyz/", demo: true, tags: ["Portfolio", "Responsive", "Vanilla JS"] },
-      { section: "web-development", creator: "VTuber Concept", creatorUrl: "#", title: "VTuber Creator Hub — Demo", mediaType: "image", image: "assets/web-vtuber-demo.svg", url: "#", demo: true, tags: ["Creator Hub", "Dark UI", "Responsive"] },
-      { section: "web-development", creator: "Streamer Concept", creatorUrl: "#", title: "Streamer Landing Page — Demo", mediaType: "image", image: "assets/web-streamer-demo.svg", url: "#", demo: true, tags: ["Landing Page", "Social Links", "Responsive"] },
-      { section: "web-development", creator: "VTuber Commission Concept", creatorUrl: "#", title: "Commission & Pricing Page — Demo", mediaType: "image", image: "assets/web-commission-demo.svg", url: "#", demo: true, tags: ["Commissions", "Pricing", "Responsive"] },
-      { section: "web-development", creator: "Creator Link Hub", creatorUrl: "#", title: "Creator Link Hub — Demo", mediaType: "image", image: "assets/web-links-demo.svg", url: "#", demo: true, tags: ["Link Hub", "Socials", "Mobile First"] },
-      { section: "web-development", creator: "Gaming Community", creatorUrl: "#", title: "Gaming Community Site — Demo", mediaType: "image", image: "assets/web-community-demo.svg", url: "#", demo: true, tags: ["Community", "Events", "Responsive"] },
-      /* ================== DEMO END — WEB DEVELOPMENT ================== */
-
-      /* =============================================================
-         MY OTHER PROJECTS
-         Keep experiments, illustration, custom cursors, motion, audio
-         and anything outside the main portfolio categories here.
-         ============================================================= */
-      {
-        section: "other-projects",
-        creator: "@Ironmouse",
-        creatorUrl: "https://twitch.tv/ironmouse",
-        title: "Cry for Me",
+      ,{
+        section: "long-form",
+        creator: "",
+        title: "",
+        youtubeId: "",
         mediaType: "youtube",
-        youtubeId: "J7Xzgcu6vVk",
+        youtubeFormat: "video",
+        commissioned: true
+      }
+      ,{
+        section: "thumbnails",
+        creator: "",
+        title: "",
+        youtubeId: "",
+        mediaType: "youtube-thumbnail",
+        youtubeFormat: "video",
+        commissioned: true
+      }
+      ,{
+        section: "web-development",
+        creator: "",
+        creatorUrl: "",
+        title: "",
+        mediaType: "image",
+        image: "",
+        url: "",
+        tags: ["Portfolio", "Responsive"]
+      }
+      ,{
+        section: "other-projects",
+        creator: "",
+        creatorUrl: "",
+        title: "",
+        mediaType: "youtube",
+        youtubeId: "",
         youtubeFormat: "video",
         projectType: "concept",
-        work: ["MOTION DESIGN", "ANIMATION"]
-        // Optional manual stats: views: "1.2M", likes: "85K"
-      },
-      {
-        section: "other-projects",
-        creator: "Fufu",
-        creatorUrl: "https://twitch.tv/fufu",
-        title: "Moon & Back",
-        mediaType: "youtube",
-        youtubeId: "I73-4Q5xPw4",
-        youtubeFormat: "video",
-        commissioned: true,
         work: ["MOTION DESIGN"]
-        // Optional manual stats: views: "12K", likes: "1.1K"
-      },
-      {
-        section: "other-projects",
-        creator: "Cursor Reference",
-        creatorUrl: "https://booth.pm/ja/items/5135798",
-        title: "Custom VTuber Cursor — Reference",
-        mediaType: "image",
-        image: "https://booth.pximg.net/cc490891-6540-40dd-b7b5-808c4b9394ca/i/5135798/a800402d-8832-4753-bca8-2cf5308bd40a_base_resized.jpg",
-        url: "https://booth.pm/ja/items/5135798",
-        downloadUrl: "https://ko-fi.com/",
-        downloadLabel: "DOWNLOAD ON KO-FI",
-        projectType: "reference",
-        work: ["CUSTOM CURSOR"]
-      },
-      {
-        section: "other-projects",
-        creator: "Illustration Reference",
-        creatorUrl: "https://vgen.co/Reinamegumi/service/live2d-vtuber-model-art-rigging/cbe66dec-5efd-4908-8c13-8acff8a21024",
-        title: "VTuber Illustration — Reference",
-        mediaType: "image",
-        image: "https://storage.vgen.co/uploads/cf8e7d9f-e237-4c9f-a40a-27c552ffd4ae/services/c834d2ab-ed9a-4f4e-ac6f-039c6e9d424e.webp",
-        url: "https://vgen.co/Reinamegumi/service/live2d-vtuber-model-art-rigging/cbe66dec-5efd-4908-8c13-8acff8a21024",
-        projectType: "reference",
-        work: ["ILLUSTRATION"]
       }
+      */
     ]
   },
-
-
 
   /* =======================================================
      COMMISSIONS
@@ -333,7 +277,6 @@ window.SITE = {
     },
     turnaroundNote: "Estimated turnaround. It may vary depending on current workload and project complexity. The final delivery time is confirmed when placing the commission.",
 
-    /* Approximate exchange rates used only for secondary EUR / USD hints. */
     approxCurrency: {
       eurPerPln: 0.229995,
       usdPerPln: 0.265268,
@@ -359,25 +302,6 @@ window.SITE = {
           { label: "Rush Fee", value: "35%" },
           { label: "Privacy Fee", value: "25%" }
         ],
-        youGet: [
-          "Upload-ready 9:16 final export",
-          "Captions / subtitles styled for the edit",
-          "Pacing, zooms, music and sound design",
-          "Creator assets, emotes and memes integrated where provided"
-        ],
-        sendMe: [
-          "Raw footage or a VOD link",
-          "Timestamps or the moments you want edited",
-          "Channel emotes, logos and other assets",
-          "References, notes and your target deadline"
-        ],
-        /* =====================================================
-           QUICK PRICE EDIT — SHORTS
-           -----------------------------------------------------
-           Change the PLN values below to update single-short
-           prices. Pack totals recalculate automatically from
-           these tier prices.
-           ===================================================== */
         tiers: [
           {
             name: "Dynamic Edit",
@@ -386,8 +310,19 @@ window.SITE = {
             price: "50 PLN",
             turnaround: "Up to 24 hours",
             estimatedTurnaround: true,
-            summary: "Fast-paced short-form editing with captions, zooms and creator-focused polish.",
-            features: ["Dynamic pacing and cuts", "Styled captions", "Zooms / visual emphasis", "Music / SFX balance"]
+            summary: "Fast-paced short-form editing.",
+            features: [
+              "Dynamic pacing and cuts",
+              "Styled captions and visual callouts",
+              "Zooms / visual emphasis",
+              "Sound design"
+            ],
+            sendMe: [
+              "Footage or a VOD link with timestamps",
+              "Channel emotes, logos and other assets",
+              "Target length",
+              "References, notes and your target deadline"
+            ]
           },
           {
             name: "Scripted Edit",
@@ -397,18 +332,22 @@ window.SITE = {
             turnaround: "Up to 48 hours",
             estimatedTurnaround: true,
             summary: "A scripted short built around a supplied voice-over, with visuals matched to the narration.",
-            features: ["Edit built around your voice-over", "Styled captions and visual callouts", "B-roll / supplied assets integrated", "Music, SFX and vertical export"]
+            features: [
+              "Edit built around your voice-over",
+              "Styled captions and visual callouts",
+              "Zooms / visual emphasis",
+              "B-roll / supplied assets",
+              "Sound design"
+            ],
+            sendMe: [
+              "Footage and, optionally, separate recorded layers / tracks",
+              "Voice-over script",
+              "Channel emotes, logos and other assets",
+              "Target length",
+              "References, notes and your target deadline"
+            ]
           }
         ],
-
-        /* =====================================================
-           QUICK PACK EDIT — SHORTS
-           -----------------------------------------------------
-           Packs apply one percentage discount to ANY short tier.
-           There is no tier selector inside the pack card.
-           Change quantity / discount here only:
-           0.10 = 10% off, 0.15 = 15% off.
-           ===================================================== */
         packLabel: "Shorts packs",
         packs: [
           {
@@ -437,29 +376,11 @@ window.SITE = {
         kicker: "LONG-FORM",
         title: "YouTube Videos",
         intro: "Longer creator-focused edits, highlights and polished YouTube videos.",
-        youGet: [
-          "Upload-ready 16:9 final export",
-          "Structured pacing and cleanup",
-          "Captions or on-screen text where needed",
-          "Music, sound design and creator assets"
-        ],
-        sendMe: [
-          "Footage, VOD or project files",
-          "Timestamps, rough cut or key moments",
-          "Channel assets and references",
-          "Target length, deadline and any must-keep moments"
-        ],
         fees: [
           { label: "Complexity", value: "Up to 100 PLN" },
           { label: "Rush Fee", value: "35%" },
           { label: "Privacy Fee", value: "25%" }
         ],
-        /* =====================================================
-           QUICK PRICE EDIT — YOUTUBE VIDEOS
-           -----------------------------------------------------
-           Change only the PLN values / turnaround below when
-           you want to update long-form pricing later.
-           ===================================================== */
         tiers: [
           {
             name: "Gaming Edit",
@@ -469,7 +390,18 @@ window.SITE = {
             turnaround: "Up to 4 days",
             estimatedTurnaround: true,
             summary: "Gameplay-focused videos made from streams or recorded gaming footage.",
-            features: ["Gameplay pacing and cleanup", "Highlights / funny moments", "Text and visual callouts", "Music and sound polish"]
+            features: [
+              "Gameplay pacing and cleanup",
+              "Highlights / funny moments",
+              "Styled captions, visual callouts and graphics",
+              "Sound design"
+            ],
+            sendMe: [
+              "Footage or a VOD link with timestamps",
+              "Channel emotes, logos and other assets",
+              "Target length",
+              "References, notes and your target deadline"
+            ]
           },
           {
             name: "Stream Edit",
@@ -479,7 +411,18 @@ window.SITE = {
             turnaround: "Up to 4 days",
             estimatedTurnaround: true,
             summary: "For talking streams, reactions, watch-alongs and other personality-led content.",
-            features: ["Conversation and reaction pacing", "Dead-air cleanup", "Captions / visual callouts", "Music and sound polish"]
+            features: [
+              "Conversation and reaction pacing",
+              "Dead-air cleanup",
+              "Styled captions, visual callouts and graphics",
+              "Sound design"
+            ],
+            sendMe: [
+              "Footage or a VOD link with timestamps",
+              "Channel emotes, logos and other assets",
+              "Target length",
+              "References, notes and your target deadline"
+            ]
           },
           {
             name: "Scripted Video Edit",
@@ -489,16 +432,21 @@ window.SITE = {
             turnaround: "Up to 7 days",
             estimatedTurnaround: true,
             summary: "A structured YouTube edit built around a script or prepared voice-over.",
-            features: ["Edit built around narration", "B-roll / supplied assets", "Styled text and graphics", "Music, SFX and final polish"]
+            features: [
+              "Edit built around narration",
+              "B-roll / supplied assets",
+              "Styled captions, visual callouts and graphics",
+              "Sound design"
+            ],
+            sendMe: [
+              "Footage and, optionally, separate recorded layers / tracks",
+              "Video script",
+              "Channel emotes, logos and other assets",
+              "Target length",
+              "References, notes and your target deadline"
+            ]
           }
         ],
-
-        /* =====================================================
-           QUICK PACK EDIT — YOUTUBE VIDEOS
-           -----------------------------------------------------
-           Pack discount applies to ANY YouTube editing tier.
-           Change quantity / discount here only.
-           ===================================================== */
         packLabel: "Video packs",
         packs: [
           {
@@ -527,20 +475,6 @@ window.SITE = {
         kicker: "VOD REVIEW",
         title: "VOD Scrubbing",
         intro: "I go through longer VODs and pull out the moments worth turning into content.",
-        youGet: [
-          "Selected moments with timestamps",
-          "A cleaner shortlist of usable content",
-          "Optional notes for clip potential",
-          "A handoff that can feed directly into editing"
-        ],
-        sendMe: [
-          "Twitch / YouTube VOD link or footage",
-          "What kind of moments you want found",
-          "Any topics or moments to avoid",
-          "Your deadline and intended platform"
-        ],
-        /* QUICK PRICE EDIT — VOD SCRUBBING
-           Both rates are charged per hour of VOD reviewed. */
         fees: [
           { label: "Rush Fee", value: "35%" }
         ],
@@ -552,7 +486,18 @@ window.SITE = {
             turnaround: "Up to 2 days",
             accent: "timestamps",
             summary: "I watch through the VOD and mark the moments you can use. Billed per hour of VOD reviewed.",
-            features: ["Full VOD review", "Organized timestamps", "Moment labels", "Short notes / context"]
+            features: [
+              "VOD review",
+              "Organized timestamps",
+              "Moment labels",
+              "Short notes / context"
+            ],
+            sendMe: [
+              "Twitch / YouTube VOD link or footage",
+              "What kind of moments you want found",
+              "Any topics or moments to avoid",
+              "Your target deadline"
+            ]
           },
           {
             name: "Edit Preparation",
@@ -561,10 +506,20 @@ window.SITE = {
             turnaround: "Up to 2 days",
             accent: "edit-prep",
             summary: "I review the VOD, cut selected moments and deliver organized clips ready for editing.",
-            features: ["VOD review", "Selected moments cut from the stream", "Edit-ready clip files", "Organized handoff for editing"]
+            features: [
+              "VOD review",
+              "Selected moments cut from the stream",
+              "Edit-ready clip files",
+              "Organized files for editing"
+            ],
+            sendMe: [
+              "Twitch / YouTube VOD link or footage",
+              "What kind of moments you want found",
+              "Any topics or moments to avoid",
+              "Your target deadline"
+            ]
           }
         ],
-        /* Bundle rate: when VOD Scrubbing is ordered together with any Short-form or Long-form edit. */
         packs: [
           {
             name: "VOD + Editing Rate",
@@ -596,25 +551,6 @@ window.SITE = {
             note: "You receive two similar thumbnail versions for YouTube A/B testing, so you can compare which version performs better."
           }
         ],
-        youGet: [
-          "Final 16:9 thumbnail export",
-          "Composition built around the video hook",
-          "Readable focal point and hierarchy",
-          "Creator assets integrated where provided"
-        ],
-        sendMe: [
-          "Video title / concept",
-          "Screenshots, renders or character assets",
-          "Brand references and examples",
-          "Any required text or visual direction"
-        ],
-        /* =====================================================
-           QUICK PRICE / AVAILABILITY EDIT — THUMBNAILS
-           -----------------------------------------------------
-           Change price / turnaround here.
-           Set enabled: false to keep a tier visible on the site
-           but greyed out and marked UNAVAILABLE.
-           ===================================================== */
         tiers: [
           {
             name: "Simple Thumbnail",
@@ -624,7 +560,17 @@ window.SITE = {
             estimatedTurnaround: true,
             accent: "thumb-clean",
             summary: "A simple long-form thumbnail with a clean composition and clear focal point.",
-            features: ["Clean image treatment", "Simple composition", "Text treatment if needed", "Final 16:9 export"]
+            features: [
+              "Simple composition",
+              "Text and graphic treatment",
+              "Final 16:9 export"
+            ],
+            sendMe: [
+              "Video title / concept",
+              "Screenshots, renders or character assets",
+              "Brand references and examples",
+              "Any required text or visual direction"
+            ]
           },
           {
             name: "Simple Shorts Thumbnail",
@@ -634,7 +580,17 @@ window.SITE = {
             estimatedTurnaround: true,
             accent: "thumb-shorts-clean",
             summary: "A simple Shorts thumbnail designed for quick readability on mobile.",
-            features: ["Clean image treatment", "Simple mobile-first composition", "Text treatment if needed", "Shorts-ready final export"]
+            features: [
+              "Simple composition",
+              "Text and graphic treatment",
+              "Final 9:16 export"
+            ],
+            sendMe: [
+              "Video title / concept",
+              "Screenshots, renders or character assets",
+              "Brand references and examples",
+              "Any required text or visual direction"
+            ]
           },
           {
             name: "Custom Thumbnail",
@@ -644,7 +600,8 @@ window.SITE = {
             estimatedTurnaround: true,
             accent: "thumb-custom",
             summary: "A more detailed long-form thumbnail with custom compositing, effects and visual treatment.",
-            features: ["Custom compositing", "Lighting / color matching", "Effects and graphic elements", "Detailed 16:9 final export"]
+            features: ["Custom compositing", "Lighting / color matching", "Effects and graphic elements", "Detailed 16:9 final export"],
+            sendMe: ["Video title / concept", "Screenshots, renders or character assets", "Brand references and examples", "Any required text or visual direction"]
           },
           {
             name: "Custom Shorts Thumbnail",
@@ -654,10 +611,10 @@ window.SITE = {
             estimatedTurnaround: true,
             accent: "thumb-shorts-custom",
             summary: "A stylized Shorts thumbnail with custom compositing, effects and stronger graphic treatment.",
-            features: ["Custom compositing", "Mobile-first graphic treatment", "Effects and visual callouts", "Shorts-ready final export"]
+            features: ["Custom compositing", "Mobile-first graphic treatment", "Effects and visual callouts", "Shorts-ready final export"],
+            sendMe: ["Video title / concept", "Screenshots, renders or character assets", "Brand references and examples", "Any required text or visual direction"]
           }
         ],
-        /* 15% off a thumbnail when it is ordered for a video I edited. */
         packs: [
           {
             name: "Edited Video Thumbnail",
@@ -677,19 +634,6 @@ window.SITE = {
         kicker: "WEB DEVELOPMENT",
         title: "Web Development",
         intro: "Responsive creator websites, portfolio hubs and landing pages built around your brand and content.",
-        youGet: [
-          "Responsive desktop and mobile website",
-          "Custom visual styling matched to your branding",
-          "Optimized layouts for links, portfolio, commissions or content",
-          "Deployment-ready files and a clean handoff"
-        ],
-        sendMe: [
-          "Branding, logo, colors and social links",
-          "Page copy, sections and content you want included",
-          "Reference websites or visual direction",
-          "Required pages, features and any domain / hosting details"
-        ],
-        /* Web-specific fees stay separate from optional add-ons. */
         fees: [
           { label: "Complexity", value: "Up to 300 PLN" },
           { label: "Rush Fee", value: "35%" },
@@ -709,13 +653,50 @@ window.SITE = {
             note: "Website maintenance and agreed changes for 6 months after delivery."
           }
         ],
-        /* Set enabled: false on any website tier to show it as unavailable. */
         tiers: [
-          { name: "Links Website", enabled: true, accent: "web-links", price: "300 PLN", turnaround: "Up to 1 week", estimatedTurnaround: true, summary: "A compact links hub for your socials, contact links and creator profiles.", features: ["Responsive link hub", "Social / CTA sections", "Custom branding", "Deployment-ready files"] },
-          { name: "Portfolio Website", enabled: true, accent: "web-portfolio", price: "450 PLN", turnaround: "Up to 2 weeks", estimatedTurnaround: true, summary: "A creator portfolio for showcasing work, services and contact information.", features: ["Portfolio / work showcase", "Links and contact sections", "Responsive navigation", "Custom creator-focused design"] },
-          { name: "Custom Website", enabled: true, accent: "web-custom", price: "650 PLN", turnaround: "Up to 3 weeks", estimatedTurnaround: true, summary: "A custom website with structure and features tailored to your project.", features: ["Custom page structure", "Interactive UI where needed", "Reusable content sections", "Responsive final build"] }
+          {
+            name: "Links Website",
+            enabled: true,
+            accent: "web-links",
+            price: "300 PLN",
+            turnaround: "Up to 1 week",
+            estimatedTurnaround: true,
+            summary: "A compact links hub for your socials, contact links and creator profiles.",
+            features: [
+              "Responsive link hub",
+              "Social / CTA sections",
+              "Custom branding",
+              "Deployment-ready files"
+            ],
+            sendMe: [
+              "Branding, logo, colors and social links",
+              "Page copy, sections and content you want included",
+              "Reference websites or visual direction",
+              "Required pages and features"
+            ]
+          },
+          {
+            name: "Portfolio Website",
+            enabled: true,
+            accent: "web-portfolio",
+            price: "450 PLN",
+            turnaround: "Up to 2 weeks",
+            estimatedTurnaround: true,
+            summary: "A creator portfolio for showcasing work, services and contact information.",
+            features: [
+              "Portfolio / work showcase",
+              "Links and contact sections",
+              "Responsive navigation",
+              "Custom creator-focused design"
+            ],
+            sendMe: [
+              "Branding, logo, colors and social links",
+              "Page copy, sections and content you want included",
+              "Reference websites or visual direction",
+              "Required pages and features"
+            ]
+          }
         ],
-        /* Website bundle: 300 + 100 + 100 = 500 PLN; 15% off = 425 PLN. */
         packs: [
           {
             name: "Links Website Bundle",
@@ -737,8 +718,8 @@ window.SITE = {
 
   tos: [
     {
-      title: "Order & Project Scope",
-      text: "Before the commission is confirmed, we agree on the selected service or tier, project scope, required materials, final price and estimated turnaround. Requests that significantly change the original brief may require a new quote, additional fee or updated delivery estimate."
+      title: "General Agreement & Orders",
+      text: "By requesting or placing a commission, you confirm that you have read and accepted these Terms. Before payment, we agree on the selected service or tier, project scope, required materials, final price and estimated turnaround. I reserve the right to decline a commission."
     },
     {
       title: "Payments",
@@ -746,39 +727,39 @@ window.SITE = {
     },
     {
       title: "What You Need to Send",
-      text: "Please provide the footage, VOD links, timestamps, references, channel assets, text, branding and any other files required for the selected service. You are responsible for making sure you are allowed to provide and use the materials you send."
+      text: "Please provide the footage, VOD links, timestamps, references, channel assets, text, branding and any other files required for the selected service. Specific requirements are listed under each individual commission option on the Commission page. You are responsible for making sure you are allowed to provide and use the materials you send."
     },
     {
       title: "VOD Scrubbing",
-      text: "VOD Scrubbing is charged per hour of VOD reviewed at the rate shown on the Commission page. Timestamps provides marked moments, while Edit Preparation provides selected clips cut from the stream and organized so they are ready for editing."
+      text: "VOD Scrubbing is charged per hour of VOD reviewed at the rate shown on the Commission page. For billing purposes, any started hour with more than 15 minutes of VOD is charged as a full hour. Timestamps provides marked moments, while Edit Preparation provides selected clips cut from the stream and organized so they are ready for editing."
     },
     {
       title: "Cancellation",
-      text: "A commission may be cancelled depending on how much of the work has already been completed. If the project is more than 50% complete, cancellation is no longer available. If it is 50% complete or less, cancellation may be accepted at my discretion and, if approved, I may refund 50% of the agreed commission price."
+      text: "A commission may be cancelled depending on how much of the work has already been completed. If the project is more than 50% complete, cancellation is no longer available. If the project is up to 50% complete, cancellation may be accepted at my discretion and, if approved, I may refund 50% of the agreed commission price. If I cancel the commission, a full refund may be issued depending on how much of the work has already been completed."
     },
     {
-      title: "Turnaround & Queue",
-      text: "Turnaround times shown on the Commission page are estimates and may vary depending on current workload, project complexity and the amount of material. The final estimated delivery time is confirmed with the commission. Rush work must be agreed before the project starts."
+      title: "Turnaround & Deadlines",
+      text: "Turnaround times shown on the Commission page are estimates and may vary depending on current workload, project complexity and the amount of material. The final estimated delivery time is confirmed with the commission. Any fixed deadline must be disclosed before payment. Rush work must be agreed before the project starts. If a delay occurs, I will inform you as soon as possible."
     },
     {
       title: "Revisions",
-      text: "Revisions cover adjustments that stay within the original agreed brief. Major direction changes, new material or extra work outside the original scope may be treated as additional work and can affect the price or turnaround."
+      text: "Revisions are provided at my discretion as part of the normal editing process, but they may also be requested by the client when the situation reasonably requires changes within the original agreed brief. Major direction changes, new material or extra work outside the original scope may be treated as additional work and can affect the price or turnaround. Changes requested after final delivery may require a separate quote."
     },
     {
       title: "Packs, Bundles & Discounts",
-      text: "Pack and bundle discounts apply only when the requirements shown on the Commission page are met, such as ordering the required number of videos or combining eligible services in one commission. Discounts cannot be assumed outside the listed conditions unless agreed otherwise."
+      text: "Pack and bundle discounts apply only when the requirements shown on the Commission page are met, such as ordering the required number of videos or combining eligible services in one commission. Eligible tiers can be mixed where the pack says so. Discounts cannot be assumed outside the listed conditions unless agreed otherwise."
     },
     {
       title: "Website Projects",
       text: "Website commissions are based on the selected website tier and agreed project scope. Domain & Hosting Setup and 6-Month Maintenance are optional add-ons unless they are included in a listed bundle. Any third-party domain, hosting or service costs are separate unless explicitly included in the agreed quote."
     },
     {
-      title: "External Licensing Platforms",
-      text: "If your project uses licensed assets from an external platform, let me know before work begins and provide the access, licence information or permissions needed for me to use those materials in your commission."
+      title: "Licensing & Supplied Assets",
+      text: "If your project uses licensed assets from an external platform, let me know before work begins and provide the access, licence information or permissions needed for me to use those materials. You are responsible for ensuring that supplied footage, music, artwork, fonts and other assets can legally be used in the commission."
     },
     {
-      title: "Rights of Use",
-      text: "You may use the video on your social media or for personal or commercial projects. Reselling the edit or claiming the edit itself as your own work is not permitted."
+      title: "Rights of Use & Portfolio",
+      text: "You may use the delivered work on your social media and for personal or commercial projects unless a different licence is agreed. Reselling the delivered work as a standalone product or claiming the work itself as your own creation is not permitted. I may showcase commissioned work in my portfolio or social media unless a Privacy Fee or another confidentiality arrangement has been agreed."
     },
     {
       title: "Final Delivery",

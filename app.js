@@ -529,6 +529,7 @@
 
     const tierMarkup = (tier, section) => {
       const tierGets = Array.isArray(tier.features) && tier.features.length ? tier.features : (section.youGet || []);
+      const tierNeeds = Array.isArray(tier.sendMe) && tier.sendMe.length ? tier.sendMe : (section.sendMe || []);
       const numericPrice = tierNumericPrice(tier);
       const approx = numericPrice != null ? approxCurrencyText(numericPrice) : '';
       const accent = String(tier.accent || '').toLowerCase().replace(/[^a-z0-9_-]/g, '');
@@ -550,12 +551,12 @@
         <div class="pricing-tier-body">
           <div class="pricing-tier-details-grid">
             <div class="pricing-tier-detail">
-              <span>WHAT YOU GET</span>
+              <span>WHAT YOU CAN GET</span>
               ${listMarkup(tierGets)}
             </div>
             <div class="pricing-tier-detail">
               <span>WHAT I NEED FROM YOU</span>
-              ${listMarkup(section.sendMe)}
+              ${listMarkup(tierNeeds)}
             </div>
           </div>
         </div>
@@ -707,7 +708,7 @@
       const processingNote = S.commission.processingFeeNote || '';
       if (!sectionFees.length && !processingFee) return '';
       return `<div class="commission-fees">
-        <div class="commission-fees-head"><span>FEES · PRIORITY</span><strong>Additional fees</strong></div>
+        <div class="commission-fees-head"><span>FEES</span><strong>Only when relevant</strong></div>
         <p class="commission-fees-note">Only applied when relevant to your commission.</p>
         ${sectionFees.length ? `<div class="commission-fee-table">
           ${sectionFees.map(fee => {
@@ -778,7 +779,7 @@
           <div class="commission-secondary-stack">
             ${secondaryGroupMarkup('PACKS', 'Save when ordering multiple', packsMarkup(section), 'packs')}
             ${secondaryGroupMarkup('ADD-ONS', 'Optional extras', addOnsMarkup(section), 'addons')}
-            ${secondaryGroupMarkup('FEES · PRIORITY', 'Possible additional costs', feesMarkup(section), 'fees')}
+            ${secondaryGroupMarkup('FEES', 'Only when relevant', feesMarkup(section), 'fees')}
           </div>
           <div class="commission-section-cta"><a href="contact.html">COMMISSION <span>↗</span></a></div>
         </div>
@@ -813,11 +814,13 @@
     commissionNav.addEventListener('click', event => {
       const link = event.target.closest('[data-commission-jump]');
       if (!link) return;
-      const target = document.getElementById(`commission-${link.dataset.commissionJump}`);
+      const id = link.dataset.commissionJump;
+      const target = document.getElementById(`commission-${id}`);
       if (!target) return;
       event.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      history.replaceState(null, '', `#commission-${link.dataset.commissionJump}`);
+      setActiveCommissionSection(id);
+      target.scrollIntoView({ behavior: 'smooth', block: id === 'custom-inquiry' ? 'center' : 'start' });
+      history.replaceState(null, '', `#commission-${id}`);
     });
 
     const navLinks = [...commissionNav.querySelectorAll('[data-commission-jump]')];
@@ -834,15 +837,29 @@
     };
     if (navLinks[0]) setActiveCommissionSection(navLinks[0].dataset.commissionJump);
 
+    const isAtCommissionBottom = () =>
+      window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 28;
+
     if ('IntersectionObserver' in window && renderedSections.length) {
       const visible = new Map();
       const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => visible.set(entry.target.id, entry.intersectionRatio));
-        const best = [...visible.entries()].filter(([, ratio]) => ratio > 0).sort((a, b) => b[1] - a[1])[0];
+        const customRatio = visible.get('commission-custom-inquiry') || 0;
+        if (isAtCommissionBottom() || customRatio >= 0.2) {
+          setActiveCommissionSection('custom-inquiry');
+          return;
+        }
+        const best = [...visible.entries()]
+          .filter(([id, ratio]) => id !== 'commission-custom-inquiry' && ratio > 0)
+          .sort((a, b) => b[1] - a[1])[0];
         if (best) setActiveCommissionSection(best[0].replace('commission-', ''));
-      }, { rootMargin: '-18% 0px -58% 0px', threshold: [0, .15, .35, .6] });
+      }, { rootMargin: '-18% 0px -42% 0px', threshold: [0, .1, .2, .35, .6] });
       renderedSections.forEach(section => observer.observe(section));
     }
+
+    window.addEventListener('scroll', () => {
+      if (isAtCommissionBottom()) setActiveCommissionSection('custom-inquiry');
+    }, { passive: true });
   }
 
   /* ---------- FAQ ---------- */
@@ -971,25 +988,41 @@
     window.addEventListener('resize', requestTilt, { passive:true });
   }
 
-  /* ---------- Cursor-follow light ---------- */
+  /* ---------- Cursor-follow light: hub rectangles only ---------- */
   const cursorGlow = $('#cursorGlow');
-  if (cursorGlow && window.matchMedia('(pointer:fine)').matches) {
+  const glowHost = $('#hubCard');
+  if (cursorGlow && glowHost && window.matchMedia('(pointer:fine)').matches) {
     const glowRadius = 180;
-    let targetX = window.innerWidth * 0.5;
-    let targetY = window.innerHeight * 0.5;
+    glowHost.appendChild(cursorGlow);
+    let targetX = glowHost.clientWidth * 0.5;
+    let targetY = glowHost.clientHeight * 0.5;
     let currentX = targetX;
     let currentY = targetY;
+    let inside = false;
 
     const drawGlow = () => {
       currentX += (targetX - currentX) * 0.16;
       currentY += (targetY - currentY) * 0.16;
       cursorGlow.style.transform = `translate3d(${(currentX - glowRadius).toFixed(1)}px, ${(currentY - glowRadius).toFixed(1)}px, 0)`;
+      cursorGlow.classList.toggle('is-visible', inside);
       requestAnimationFrame(drawGlow);
     };
 
-    document.addEventListener('pointermove', event => {
-      targetX = event.clientX;
-      targetY = event.clientY;
+    glowHost.addEventListener('pointerenter', event => {
+      inside = true;
+      const rect = glowHost.getBoundingClientRect();
+      targetX = event.clientX - rect.left;
+      targetY = event.clientY - rect.top;
+    }, { passive:true });
+
+    glowHost.addEventListener('pointermove', event => {
+      const rect = glowHost.getBoundingClientRect();
+      targetX = event.clientX - rect.left;
+      targetY = event.clientY - rect.top;
+    }, { passive:true });
+
+    glowHost.addEventListener('pointerleave', () => {
+      inside = false;
     }, { passive:true });
 
     requestAnimationFrame(drawGlow);
