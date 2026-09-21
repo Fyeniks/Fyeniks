@@ -1,93 +1,97 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Fyeniks — video editor for VTubers, streamers and online creators.">
-  <title>✦ Fyeniks ✦ </title>
-  <link rel="icon" type="image/png" href="assets/favicon.png?v=99">
-  <link rel="shortcut icon" href="assets/favicon.ico?v=99">
-  <link rel="stylesheet" href="style.css?v=99">
-</head>
-<body class="single-page-home">
-  <a class="launch-promo" href="commission.html" aria-label="View launch commission pricing"></a>
-  <div class="ambient ambient-1"></div>
-  <div class="ambient ambient-2"></div>
-  <div class="grain"></div>
-  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Fyeniks — video editor for VTubers, streamers and online creators." />
+    <title>✦ Fyeniks ✦</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png?v=122" />
+    <link rel="shortcut icon" href="assets/favicon.ico?v=122" />
+    <link rel="stylesheet" href="style.css?v=122" />
+  </head>
+  <body class="single-page-home">
+    <a class="launch-promo" href="commission.html" aria-label="View launch commission pricing"></a>
+    <div class="ambient ambient-1"></div>
+    <div class="ambient ambient-2"></div>
+    <div class="grain"></div>
+    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
 
-  <main>
-    <section class="hub-section" aria-label="Fyeniks hub">
-      <div class="hub-stage">
-        <a class="hub-twitch-status is-loading" id="hubTwitchStatus" href="https://twitch.tv/fyeniks" target="_blank" rel="noopener noreferrer" aria-label="Fyeniks Twitch status">
-          <i class="hub-twitch-dot" aria-hidden="true"></i>
-          <span class="hub-twitch-text" data-twitch-text>Checking ✦ Twitch.tv/Fyeniks</span>
-        </a>
+    <main>
+      <section class="hub-section" aria-label="Fyeniks hub">
+        <div class="hub-stage">
+          <div class="hub-assembly" id="hubCard">
+            <div class="hub-backplate" aria-hidden="true"></div>
 
-        <div class="hub-assembly" id="hubCard">
-          <div class="hub-backplate" aria-hidden="true"></div>
+            <a
+              class="hub-twitch-status is-loading"
+              id="hubTwitchStatus"
+              href="https://twitch.tv/fyeniks"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Fyeniks Twitch status"
+            >
+              <i class="hub-twitch-dot" aria-hidden="true"></i>
+              <span class="hub-twitch-text" data-twitch-text>Checking ✦ Twitch.tv/Fyeniks</span>
+            </a>
 
-          <div class="hub-panels">
-            <aside class="hub-left-panel">
-              <div class="brand-block">
-                <img class="brand-avatar" src="assets/avatar.png" alt="Fyeniks avatar">
-                <div class="brand-copy">
-                  <span class="profile-kicker" data-profile-kicker></span>
-                  <h1 data-brand></h1>
-                  <p data-role-line></p>
+            <div class="hub-panels">
+              <aside class="hub-left-panel">
+                <div class="brand-block">
+                  <img class="brand-avatar" src="assets/avatar.png" alt="Fyeniks avatar" />
+                  <div class="brand-copy">
+                    <span class="profile-kicker" data-profile-kicker></span>
+                    <h1 data-brand></h1>
+                    <p data-role-line></p>
+                  </div>
                 </div>
-              </div>
 
-              <div class="sidebar-section">
-                <span class="sidebar-label">✦ COMMISSION STATUS ✦</span>
-                <div class="service-list" id="service-list"></div>
-              </div>
+                <div class="sidebar-section">
+                  <span class="sidebar-label">✦ COMMISSION STATUS ✦</span>
+                  <div class="service-list" id="service-list"></div>
+                </div>
 
-              <div class="hub-local-time" aria-label="Local time in Poland">
-                <span class="hub-local-flag" aria-hidden="true"><i></i><i></i></span>
-                <strong class="hub-local-clock" id="hubLocalTime">--:-- --</strong>
-              </div>
+                <div class="hub-local-time" aria-label="Local time in Poland">
+                  <span class="hub-local-flag" aria-hidden="true"><i></i><i></i></span>
+                  <strong class="hub-local-clock" id="hubLocalTime">--:-- --</strong>
+                </div>
 
-              <a class="contact-button" href="contact.html">CONTACT ME <span>↗</span></a>
-            </aside>
+                <a class="contact-button" href="contact.html">CONTACT ME <span>↗</span></a>
+              </aside>
 
-            <section class="hub-right-panel">
-              <nav class="hub-nav hub-nav-inline" id="site-nav" aria-label="Main navigation"></nav>
+              <section class="hub-right-panel">
+                <nav class="hub-nav hub-nav-inline" id="site-nav" aria-label="Main navigation"></nav>
 
-              <div class="about-window">
-                <div class="about-orb about-orb-1" aria-hidden="true"></div>
-                <div class="about-orb about-orb-2" aria-hidden="true"></div>
-                <div class="about-grid" aria-hidden="true"></div>
+                <div class="about-window">
+                  <div class="about-orb about-orb-1" aria-hidden="true"></div>
+                  <div class="about-orb about-orb-2" aria-hidden="true"></div>
+                  <div class="about-grid" aria-hidden="true"></div>
 
-                <div class="about-copy">
-                  <div class="about-topline">
-                    <span data-eyebrow></span>
-                    <span class="about-index" data-about-index></span>
+                  <div class="about-copy">
+                    <div class="about-topline">
+                      <span data-eyebrow></span>
+                      <span class="about-index" data-about-index></span>
+                    </div>
+
+                    <h2 data-about-title></h2>
+                    <p class="about-lead" data-about></p>
                   </div>
 
-                  <h2 data-about-title></h2>
-                  <p class="about-lead" data-about></p>
-
+                  <aside class="about-side" aria-label="Fyeniks social links">
+                    <div class="about-social-list" id="about-socials"></div>
+                  </aside>
                 </div>
-
-                <aside class="about-side" aria-label="Fyeniks social links">
-                  <div class="about-social-list" id="about-socials"></div>
-                </aside>
-              </div>
-            </section>
+              </section>
+            </div>
           </div>
         </div>
+      </section>
+    </main>
 
-        <nav class="hub-nav hub-nav-floating" id="site-nav-floating" aria-label="Main navigation"></nav>
-      </div>
-    </section>
-  </main>
+    <footer class="home-footer" aria-label="Site footer">
+      © <span data-current-year></span> FYENIKS <span class="footer-dot">•</span> ALL RIGHTS RESERVED
+    </footer>
 
-  <footer class="home-footer" aria-label="Site footer">
-    © <span data-current-year></span> FYENIKS <span class="footer-dot">•</span> ALL RIGHTS RESERVED
-  </footer>
-
-  <script src="site-config.js?v=99"></script>
-  <script src="app.js?v=99"></script>
-</body>
+    <script src="site-config.js?v=122"></script>
+    <script src="app.js?v=122"></script>
+  </body>
 </html>

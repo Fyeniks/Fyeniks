@@ -1,26 +1,137 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Contact Fyeniks for editing and collaboration enquiries.">
-  <title>Contact — Fyeniks</title>
-  <link rel="icon" type="image/png" href="assets/favicon.png?v=99">
-  <link rel="shortcut icon" href="assets/favicon.ico?v=99">
-  <link rel="stylesheet" href="style.css?v=99">
-</head>
-<body class="subpage-body" data-page="contact">
-  <div class="ambient ambient-1"></div><div class="ambient ambient-2"></div><div class="grain"></div>
-  <main class="subpage"><div class="sub-wrap">
-    <header class="subnav"><a class="sub-brand" href="index.html"><img class="sub-brand-avatar" src="assets/avatar.png" alt=""><b data-brand></b></a><a class="back" href="index.html">← Back to Hub</a></header>
-    <section class="sub-card contact-layout">
-      <div class="contact-copy">
-        <div class="page-heading"><span data-page-kicker></span><h1 data-page-title></h1><p data-page-intro></p></div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Contact Fyeniks for editing and collaboration enquiries." />
+    <title>Contact — Fyeniks</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png?v=122" />
+    <link rel="shortcut icon" href="assets/favicon.ico?v=122" />
+    <link rel="stylesheet" href="style.css?v=122" />
+  </head>
+  <body class="subpage-body" data-page="contact">
+    <div class="ambient ambient-1"></div>
+    <div class="ambient ambient-2"></div>
+    <div class="grain"></div>
+    <main class="subpage">
+      <div class="sub-wrap">
+        <header class="subnav">
+          <a class="sub-brand" href="index.html"
+            ><img class="sub-brand-avatar" src="assets/avatar.png" alt="" /><b data-brand></b></a
+          ><a class="back" href="index.html">← Back to Hub</a>
+        </header>
+        <section class="sub-card contact-layout">
+          <div class="contact-copy">
+            <div class="page-heading">
+              <span data-page-kicker></span>
+              <h1 data-page-title></h1>
+              <p data-page-intro></p>
+            </div>
+          </div>
+          <aside class="contact-options">
+            <div class="discord-preference">
+              <strong>Want the fastest reply?</strong>
+              <p>
+                Contact me on Discord — it’s the quickest way to discuss your project. Use the message builder
+                below to prepare your first message for Discord, X / Twitter or email.
+              </p>
+            </div>
+            <div class="contact-links" id="contact-links"></div>
+          </aside>
+          <form class="commission-form" id="commission-form">
+            <div class="commission-form-heading">
+              <span>FIRST MESSAGE BUILDER</span>
+              <h2>Describe your inquiry</h2>
+              <p>
+                Fields marked * are required. Please include a Discord or X / Twitter handle so I can follow
+                up.
+              </p>
+            </div>
+            <div class="inquiry-fields">
+              <label
+                >Your name / creator name *<input name="name" autocomplete="name" required maxlength="100"
+              /></label>
+              <label
+                >Your email (optional)<input name="email" type="email" autocomplete="email" maxlength="254"
+              /></label>
+              <label class="inquiry-full"
+                >Service *<select name="service" id="inquiry-service" required></select
+              ></label>
+              <label id="inquiry-tier-field" hidden
+                >Tier (optional)<select name="tier" id="inquiry-tier" disabled>
+                  <option value="">Not sure yet / No preference</option>
+                </select></label
+              >
+              <label id="inquiry-pack-field" hidden
+                >Pack (optional)<select name="pack" id="inquiry-pack" disabled>
+                  <option value="">No pack / Decide later</option>
+                </select></label
+              >
+              <div class="inquiry-brief inquiry-full">
+                <strong>What to include</strong>
+                <p id="inquiry-guidance"></p>
+              </div>
+              <label
+                >Preferred contact *<select name="platform" id="inquiry-platform" required>
+                  <option value="Discord">Discord — fastest reply</option>
+                  <option value="X / Twitter">X / Twitter</option>
+                </select></label
+              >
+              <label
+                ><span id="inquiry-handle-label">Discord username *</span
+                ><input
+                  name="handle"
+                  id="inquiry-handle"
+                  required
+                  maxlength="100"
+                  placeholder="Your Discord username"
+                  autocapitalize="none"
+                  spellcheck="false"
+              /></label>
+              <label>Deadline (optional)<input name="deadline" type="date" /></label>
+              <label class="inquiry-budget-field"
+                >Budget (optional)
+                <span class="inquiry-budget-control">
+                  <input name="budget" maxlength="100" inputmode="decimal" placeholder="e.g. 300" />
+                  <select name="currency" id="inquiry-currency" aria-label="Budget currency">
+                    <option value="PLN">PLN</option>
+                    <option value="EUR">EUR</option>
+                    <option value="USD">USD</option>
+                  </select>
+                </span>
+              </label>
+              <label class="inquiry-full"
+                >Project details *<textarea
+                  name="details"
+                  id="inquiry-details"
+                  required
+                  rows="7"
+                  maxlength="5000"
+                ></textarea>
+              </label>
+            </div>
+            <p class="inquiry-delivery-note">
+              <strong>Copy the prepared message and send it to me by email or paste it into my DMs on X / Twitter.</strong>
+              You can also send it through Discord. The form can open your email app with the message already prepared for you.
+            </p>
+            <div class="inquiry-actions">
+              <button type="submit">OPEN EMAIL APP ↗</button
+              ><button type="button" id="copy-inquiry">COPY MESSAGE</button>
+            </div>
+            <p id="inquiry-status" role="status" aria-live="polite"></p>
+            <textarea
+              id="inquiry-copy-fallback"
+              aria-label="Prepared message — select and copy"
+              readonly
+              hidden
+              rows="8"
+            ></textarea>
+          </form>
+        </section>
+        <footer>© <span data-current-year></span> <span data-brand></span>.</footer>
       </div>
-      <div class="contact-links" id="contact-links"></div>
-    </section>
-    <footer>© <span data-current-year></span> <span data-brand></span>.</footer>
-  </div></main>
-  <script src="site-config.js?v=99"></script><script src="app.js?v=99"></script>
-</body>
+    </main>
+    <script src="site-config.js?v=122"></script>
+    <script src="app.js?v=122"></script>
+  </body>
 </html>
