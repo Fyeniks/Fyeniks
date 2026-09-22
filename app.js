@@ -772,7 +772,6 @@
       if (!sectionFees.length && !processingFee) return '';
       return `<div class="commission-fees">
         <div class="commission-fees-head"><span>FEES</span><strong>Only when relevant</strong></div>
-        <p class="commission-fees-note">Only applied when relevant to your commission.</p>
         ${sectionFees.length ? `<div class="commission-fee-table">
           ${sectionFees.map(fee => {
             const note = fee.note || feeNotes[fee.label] || '';
