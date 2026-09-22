@@ -253,11 +253,12 @@ img{
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 0;
+  gap: 8px;
   width: 92px;
   margin-left: auto;
   font-size: 9.5px;
   font-weight: 800;
+  line-height: 1;
   letter-spacing: 0.11em;
   white-space: nowrap;
 }
@@ -267,8 +268,9 @@ img{
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  display: inline-block;
-  flex: 0 0 auto;
+  display: block;
+  flex: 0 0 7px;
+  margin: 0;
   background: currentColor;
   box-shadow: 0 0 9px currentColor;
 }
@@ -5406,7 +5408,14 @@ button.portfolio-media-youtube-button:focus-visible{
 }
 
 .hub-twitch-dot{
-  display: none;
+  order: 0;
+  display: block;
+  width: 8px;
+  height: 8px;
+  flex: 0 0 8px;
+  border-radius: 50%;
+  background: #77717b;
+  box-shadow: 0 0 0 3px rgba(118, 112, 121, 0.08);
 }
 
 .hub-twitch-text{
@@ -5416,6 +5425,13 @@ button.portfolio-media-youtube-button:focus-visible{
   font-weight: 850;
   letter-spacing: 0.035em;
   white-space: nowrap;
+}
+
+
+.hub-twitch-status.is-offline .hub-twitch-dot{
+  background:#77717b;
+  box-shadow:0 0 0 3px rgba(118,112,121,.08),0 0 8px rgba(118,112,121,.18);
+  animation:none;
 }
 
 .hub-twitch-status.is-live .hub-twitch-text{
