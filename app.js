@@ -551,7 +551,10 @@
   const commissionSectionsRoot = $('#commission-sections');
 
   if (commissionNav && commissionSectionsRoot && S.commission) {
-    const sections = Array.isArray(S.commission.sections) ? S.commission.sections : [];
+    const sections = (Array.isArray(S.commission.sections) ? S.commission.sections : []).filter(section => {
+      const service = (S.services || []).find(item => item.name === section.serviceName);
+      return service?.showOnCommission !== false;
+    });
     const fees = Array.isArray(S.commission.fees) ? S.commission.fees : [];
 
     const findServiceStatus = serviceName => {
