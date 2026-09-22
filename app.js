@@ -841,7 +841,7 @@
             ${secondaryGroupMarkup('ADD-ONS', 'Optional extras', addOnsMarkup(section), 'addons')}
             ${secondaryGroupMarkup('FEES', 'Only when relevant', feesMarkup(section), 'fees')}
           </div>
-          <div class="commission-section-cta"><a href="contact.html">COMMISSION <span>↗</span></a></div>
+          <div class="portfolio-section-cta commission-section-cta"><a class="portfolio-order" href="contact.html?service=${encodeURIComponent(section.id)}"><span class="portfolio-cta-action">COMMISSION ↗</span></a></div>
         </div>
       </section>`;
     }).join('');

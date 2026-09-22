@@ -5408,6 +5408,7 @@ button.portfolio-media-youtube-button:focus-visible{
 }
 
 .hub-twitch-dot{
+  position: relative;
   order: 0;
   display: block;
   width: 8px;
@@ -5432,6 +5433,12 @@ button.portfolio-media-youtube-button:focus-visible{
   background:#77717b;
   box-shadow:0 0 0 3px rgba(118,112,121,.08),0 0 8px rgba(118,112,121,.18);
   animation:none;
+}
+
+.hub-twitch-status.is-offline .hub-twitch-dot::after,
+.hub-twitch-status.is-loading .hub-twitch-dot::after,
+.hub-twitch-status.is-error .hub-twitch-dot::after{
+  content:none;
 }
 
 .hub-twitch-status.is-live .hub-twitch-text{
@@ -5566,30 +5573,18 @@ button.portfolio-media-youtube-button:focus-visible{
 }
 
 .hub-twitch-status.is-live .hub-twitch-dot{
-  background: #ff334d;
-  box-shadow:
-    0 0 0 3px rgba(255, 51, 77, 0.12),
-    0 0 12px rgba(255, 51, 77, 0.68);
-  animation: hub-twitch-live-pulse 1.05s ease-in-out infinite;
+  background:#ff334d;
+  box-shadow:0 0 9px rgba(255,51,77,.78);
+  animation:none;
 }
 
-@keyframes hub-twitch-live-pulse {
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: 1;
-    box-shadow:
-      0 0 0 3px rgba(255, 51, 77, 0.1),
-      0 0 10px rgba(255, 51, 77, 0.45);
-  }
-
-  50% {
-    transform: scale(1.32);
-    opacity: 0.72;
-    box-shadow:
-      0 0 0 5px rgba(255, 51, 77, 0.05),
-      0 0 16px rgba(255, 51, 77, 0.78);
-  }
+.hub-twitch-status.is-live .hub-twitch-dot::after{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  border:1px solid #ff334d;
+  border-radius:50%;
+  animation:statusPing 1.65s cubic-bezier(.15,.65,.35,1) infinite;
 }
 
 @media (max-width: 900px){
@@ -6089,20 +6084,26 @@ button.portfolio-media-youtube-button:focus-visible{
   opacity: 1;
 }
 .inquiry-brief{
-  padding: 16px;
-  border-radius: 12px;
-  background: rgba(103, 29, 250, 0.09);
-  border: 1px solid var(--line);
+  padding: 20px 22px;
+  border: 0;
+  border-left: 3px solid rgba(156, 92, 255, 0.48);
+  border-radius: 0;
+  background: rgba(103, 29, 250, 0.075);
+  color: #c7b9d2;
+  font-size: 13px;
+  line-height: 1.72;
 }
 .inquiry-brief strong{
-  color: var(--accent-3);
-  font-size: 12px;
+  display: block;
+  color: #f3eafd;
+  font-size: 13.5px;
+  font-weight: 800;
 }
 .inquiry-brief p{
-  margin: 8px 0 0;
-  line-height: 1.7;
-  color: var(--muted);
+  margin: 7px 0 0;
+  color: #c7b9d2;
   font-size: 13px;
+  line-height: 1.72;
 }
 .inquiry-actions{
   display: flex;
@@ -7134,35 +7135,7 @@ button.portfolio-media-youtube-button:focus-visible{
 }[data-page="commission"] .commission-section-cta{
   width:min(100%,1080px);
   margin:18px auto 0;
-}[data-page="commission"] .commission-section-cta a{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:12px;
-  width:100%;
-  min-height:58px;
-  padding:15px 22px;
-  box-sizing:border-box;
-  border:1px solid rgba(194,157,255,.48);
-  border-radius:13px;
-  background:linear-gradient(135deg,rgba(103,29,250,.28),rgba(139,71,255,.12));
-  color:#fff;
-  font-family:Outfit,sans-serif;
-  font-size:14px;
-  font-weight:800;
-  letter-spacing:.10em;
-  text-decoration:none;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.04),0 12px 28px rgba(58,21,111,.14);
-  transition:transform .18s ease,border-color .18s ease,background .18s ease,box-shadow .18s ease;
-}[data-page="commission"] .commission-section-cta a span{
-  font-size:18px;
-  transition:transform .18s ease;
-}[data-page="commission"] .commission-section-cta a:hover{
-  transform:translateY(-2px);
-  border-color:rgba(221,200,255,.78);
-  background:linear-gradient(135deg,rgba(103,29,250,.42),rgba(151,85,255,.20));
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.05),0 15px 34px rgba(69,24,132,.22),0 0 22px rgba(103,29,250,.10);
-}[data-page="commission"] .commission-section-cta a:hover span{transform:translate(3px,-2px)}@media (max-width:900px){[data-page="commission"] .pricing-tier summary{
+}@media (max-width:900px){[data-page="commission"] .pricing-tier summary{
     grid-template-columns:minmax(200px,1fr) minmax(150px,190px) minmax(150px,190px)!important;
   }}@media (max-width:760px){[data-page="commission"] .commission-title-row{
     align-items:flex-start;
