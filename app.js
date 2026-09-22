@@ -834,7 +834,7 @@
             <div>
               <span>PRICING · START HERE</span>
               <h3>Choose a tier</h3>
-              <p class="commission-pricing-helper">Pick the option that matches your project. Packs, add-ons and possible fees are grouped below.</p>
+              <p class="commission-pricing-helper">Choose the option that best fits your project, or use Custom Inquiry for something different. Packs, add-ons and fees are grouped below.</p>
             </div>
           </div>
           <div class="pricing-tier-list">${tiers.map(tier => tierMarkup(tier, section)).join('')}</div>
