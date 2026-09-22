@@ -8482,3 +8482,17 @@ button.portfolio-media-youtube-button:focus-visible{
     transform: none;
   }
 }
+
+/* v128 — home commission status dot alignment */
+.single-page-home .service-status{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  min-height:14px;
+  line-height:14px;
+}
+.single-page-home .service-status .status-dot{
+  align-self:center;
+  margin:0;
+  transform:translateY(-0.75px);
+}
