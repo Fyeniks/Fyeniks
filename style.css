@@ -5377,7 +5377,8 @@ button.portfolio-media-youtube-button:focus-visible{
 }
 
 .hub-twitch-status{
-  top: 12px;
+  /* Center the 34px Twitch pill exactly inside the 50px top frame gap. */
+  top: 8px;
   min-width: 0;
   width: auto;
   height: 34px;
