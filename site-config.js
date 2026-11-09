@@ -97,7 +97,7 @@ window.SITE = {
     {
       key: "ytjobs",
       label: "YT Jobs",
-      handle: "Talent profile",
+      handle: "@Fyeniks",
       icon: "briefcase",
       showOnHome: false,
     },
